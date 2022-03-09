@@ -2,7 +2,7 @@
 Accessibility tool for display contrast adjustment
 
 ## What is this for?
-Existing accessibility tools are often focused on magnifying the screen. However, this is insufficient for those with vision issues such as cataracts that reduce apparent contrast. Some tools include an "invert colors" mode, which is useful for e.g. dialog prompts for applications without dark mode, but distorts the image significantly and is therefore undesirable for viewing photos, artwork, etc. ContrastLens is designed to increase the effective brightness and/or contrast of a repositionable screen area.
+Existing accessibility tools are often focused on magnifying the screen. However, this is insufficient for those with vision issues such as cataracts that reduce apparent contrast. Some tools include an "invert colors" mode, which is useful for e.g. dialog prompts in applications without a dark mode, but distorts the image significantly and is therefore undesirable for viewing photos, artwork, etc. ContrastLens is designed to increase the effective brightness and/or contrast of a repositionable screen area.
 
 ## Modes
 ### Capture mode
