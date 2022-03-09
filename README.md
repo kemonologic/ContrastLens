@@ -14,6 +14,7 @@ Live mode allows previewing the area underneath the window live. However, due to
 ### Mirror mode
 Mirror mode allows one part of the screen to mirror the other, whether on the same display or a different display, with the contrast effect applied. Mirror mode works best with multiple displays, but is also dockable.
 
+## Dependencies
 This project requires the following extensions to be included to compile, which are not included:
 https://yellowafterlife.itch.io/gamemaker-display-screenshot
 https://yellowafterlife.itch.io/window-freeze-fix
