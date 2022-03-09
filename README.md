@@ -17,5 +17,5 @@ Mirror mode allows one part of the screen to mirror the other, whether on the sa
 ## Dependencies
 This project requires the following extensions to be included to compile, which are not included:
 
-[*] https://yellowafterlife.itch.io/gamemaker-display-screenshot
-[*] https://yellowafterlife.itch.io/window-freeze-fix
+* https://yellowafterlife.itch.io/gamemaker-display-screenshot
+* https://yellowafterlife.itch.io/window-freeze-fix
