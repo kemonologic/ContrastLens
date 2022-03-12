@@ -1,0 +1,7 @@
+extensions/
+datafiles/display_screenshot.html
+datafiles_yy/display_screenshot.html.yy
+objects/obj_display_screenshot_demo_simple/Create_0.gml
+objects/obj_display_screenshot_demo_simple/Draw_0.gml
+objects/obj_display_screenshot_demo_simple/obj_display_screenshot_demo_simple.yy
+objects/obj_display_screenshot_demo_simple/Step_0.gml
