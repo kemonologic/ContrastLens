@@ -12,18 +12,7 @@ if (!surface_exists(captureSurface)){
 }
 
 if (mode == LENS_MODE.capture){
-	if (keyboard_check_pressed(captureKey)){
-		window_set_visible_w(false);
-		surface_set_target(captureSurface);
-		draw_clear_alpha(c_black,1);
-		surface_reset_target();
-		//window_command_run(window_command_minimize);
-		window_set_visible_w(false);
-		captureSuccess = display_capture_buffer_part(winX,winY,winW,winH,captureBuffer);
-		buffer_set_surface(captureBuffer, captureSurface, 0, 0, 0);
-		//window_command_run(window_command_restore);
-		window_set_visible_w(true);
-	}
+	lens_state_capture();
 }
 else if (mode == LENS_MODE.live){
 	if (cnt % interval == 0){

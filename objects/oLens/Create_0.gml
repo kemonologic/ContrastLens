@@ -5,8 +5,8 @@ enum LENS_MODE{
 }
 
 
-window_set_cursor(cr_none);
-cursor_sprite = sBlank;
+//window_set_cursor(cr_none);
+//cursor_sprite = sBlank;
 
 window_command_hook(window_command_minimize);
 window_command_hook(window_command_maximize);
@@ -30,5 +30,6 @@ winH = room_height;
 captureSuccess = -1;
 
 //window_command_run(window_command_minimize);
+//
 //window_set_topmost(1);
 shader_set(shader);
