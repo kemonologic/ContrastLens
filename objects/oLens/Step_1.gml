@@ -1,3 +1,11 @@
+if (!surface_exists(captureSurface)){
+	captureSurface = surface_create(max(320,winW),max(240,winH));
+	surface_set_target(captureSurface);
+	draw_clear_alpha(c_black,0);
+	surface_reset_target();
+}
+
+
 winX = window_get_x();
 winY = window_get_y();
 var _step = 5;

@@ -1,16 +1,3 @@
-
-/*if (keyboard_check_pressed(vk_backspace)){
-	
-}*/
-
-//
-if (!surface_exists(captureSurface)){
-	captureSurface = surface_create(max(320,winW),max(240,winH));
-	surface_set_target(captureSurface);
-	draw_clear_alpha(c_black,0);
-	surface_reset_target();
-}
-
 if (mode == LENS_MODE.capture){
 	lens_state_capture();
 }

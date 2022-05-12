@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "7c1634b4-77ae-4ef8-90e3-a13e1b4cde08",
+            "Value": {
+                "id": "45696680-ce01-4115-8994-e3d66d48b7db",
+                "resourcePath": "shaders\\sh_bricon\\sh_bricon.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "915b54e2-ea4a-43ac-8285-8e5063a51c00",
             "Value": {
                 "id": "1914b9b6-be9b-488b-82a7-9ee22f8eb5e2",
