@@ -55,6 +55,8 @@ mode = LENS_MODE.live;
 interval = 60;
 cnt = 0;
 
+finderEnabled = false;
+
 shader = sh_bricon;
 shader_bUniform = shader_get_uniform(shader,"brightness");
 shader_cUniform = shader_get_uniform(shader,"contrast");

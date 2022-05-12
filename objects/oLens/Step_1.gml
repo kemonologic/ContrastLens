@@ -6,6 +6,10 @@ if (!surface_exists(captureSurface)){
 }
 
 
+if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_FINDER"])){
+	finderEnabled = !finderEnabled;
+}
+
 if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_SHADER"])){
 	shader_reset();
 	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
