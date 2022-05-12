@@ -21,6 +21,11 @@ options_contrast[NORMRANGE.vmax] = 1.5;
 options_contrast[NORMRANGE.vdefault] = 1;
 options_contrast[NORMRANGE.vincrement] = 0.1;
 
+options_contrast[NORMRANGE.vmin] = 10;
+options_contrast[NORMRANGE.vmax] = 120;
+options_contrast[NORMRANGE.vdefault] = 60;
+options_contrast[NORMRANGE.vincrement] = 10;
+
 
 //window_set_cursor(cr_none);
 //cursor_sprite = sBlank;
