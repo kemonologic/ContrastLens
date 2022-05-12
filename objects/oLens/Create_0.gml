@@ -11,6 +11,13 @@ enum NORMRANGE{
 	vincrement
 }
 
+hotkeyMap = ds_map_create();
+
+hotkeyMap[? "MOVE_LEFT"] = vk_left;
+hotkeyMap[? "MOVE_RIGHT"] = vk_right;
+hotkeyMap[? "MOVE_UP"] = vk_up;
+hotkeyMap[? "MOVE_DOWN"] = vk_down;
+
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
 options_brightness[NORMRANGE.vdefault] = 0;
@@ -60,5 +67,5 @@ var bUniform = shader_get_uniform(shader,"brightness");
 var cUniform = shader_get_uniform(shader,"contrast");
 
 shader_set(shader);
-shader_set_uniform_f(bUniform,0.5);
+shader_set_uniform_f(bUniform,0);
 shader_set_uniform_f(cUniform,1.15);
