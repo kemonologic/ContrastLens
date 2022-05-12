@@ -1,7 +1,7 @@
 enum LENS_MODE{
 	capture,
 	live,
-	mirror
+	__SIZE
 }
 
 enum NORMRANGE{
@@ -19,6 +19,7 @@ hotkeyMap[? "MOVE_RIGHT"] = vk_right;
 hotkeyMap[? "MOVE_UP"] = vk_up;
 hotkeyMap[? "MOVE_DOWN"] = vk_down;
 hotkeyMap[? "CLOSE"] = vk_escape;
+hotkeyMap[? "CHANGE_MODE"] = key_lookup("M");
 hotkeyMap[? "INTERVAL_DECREASE"] = key_lookup("Q");
 hotkeyMap[? "INTERVAL_INCREASE"] = key_lookup("E");
 hotkeyMap[? "TOGGLE_FINDER"] = key_lookup("F");

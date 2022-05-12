@@ -10,6 +10,11 @@ if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_FINDER"])){
 	finderEnabled = !finderEnabled;
 }
 
+if (keyboard_check_pressed(hotkeyMap[? "CHANGE_MODE"])){
+	mode = (mode + 1) % LENS_MODE.__SIZE;
+	trace(mode);
+}
+
 if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_SHADER"])){
 	shader_reset();
 	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
