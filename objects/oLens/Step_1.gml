@@ -6,6 +6,16 @@ if (!surface_exists(captureSurface)){
 }
 
 
+if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_SHADER"])){
+	shader_reset();
+	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
+	shader_set(shader);
+	if (shader == sh_bricon){
+		shader_set_uniform_f(shader_bUniform,brightness);
+		shader_set_uniform_f(shader_cUniform,contrast);
+	}
+}
+
 winX = window_get_x();
 winY = window_get_y();
 var _step = 5;

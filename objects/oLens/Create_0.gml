@@ -11,12 +11,18 @@ enum NORMRANGE{
 	vincrement
 }
 
+
 hotkeyMap = ds_map_create();
 
 hotkeyMap[? "MOVE_LEFT"] = vk_left;
 hotkeyMap[? "MOVE_RIGHT"] = vk_right;
 hotkeyMap[? "MOVE_UP"] = vk_up;
 hotkeyMap[? "MOVE_DOWN"] = vk_down;
+hotkeyMap[? "CLOSE"] = vk_escape;
+hotkeyMap[? "INTERVAL_DECREASE"] = key_lookup("Q");
+hotkeyMap[? "INTERVAL_INCREASE"] = key_lookup("E");
+hotkeyMap[? "TOGGLE_FINDER"] = key_lookup("F");
+hotkeyMap[? "TOGGLE_SHADER"] = key_lookup("I");
 
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
@@ -48,7 +54,13 @@ game_set_speed(60,gamespeed_fps);
 mode = LENS_MODE.live;
 interval = 60;
 cnt = 0;
+
 shader = sh_bricon;
+shader_bUniform = shader_get_uniform(shader,"brightness");
+shader_cUniform = shader_get_uniform(shader,"contrast");
+contrast = 1.0;
+brightness = 0.0;
+
 captureBuffer =buffer_create(1, buffer_grow, 1);
 captureSurface = -1;
 captureKey = vk_enter;
@@ -63,9 +75,7 @@ captureSuccess = -1;
 //
 //window_set_topmost(1);
 
-var bUniform = shader_get_uniform(shader,"brightness");
-var cUniform = shader_get_uniform(shader,"contrast");
 
 shader_set(shader);
-shader_set_uniform_f(bUniform,0);
-shader_set_uniform_f(cUniform,1.15);
+shader_set_uniform_f(shader_bUniform,brightness);
+shader_set_uniform_f(shader_cUniform,contrast);
