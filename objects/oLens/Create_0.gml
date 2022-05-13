@@ -18,6 +18,8 @@ hotkeyMap[? "MOVE_LEFT"] = vk_left;
 hotkeyMap[? "MOVE_RIGHT"] = vk_right;
 hotkeyMap[? "MOVE_UP"] = vk_up;
 hotkeyMap[? "MOVE_DOWN"] = vk_down;
+hotkeyMap[? "RESIZE_MODIFIER"] = vk_shift;
+
 hotkeyMap[? "CLOSE"] = vk_escape;
 hotkeyMap[? "CHANGE_MODE"] = key_lookup("M");
 hotkeyMap[? "INTERVAL_DECREASE"] = key_lookup("Q");
@@ -82,7 +84,9 @@ winY = 500;
 winW = room_width;
 winH = room_height;
 captureSuccess = -1;
-
+winResizeWIncrement = 10;
+winResizeHIncrement = 10;
+winMoveIncrement = 5;
 
 //window_command_run(window_command_minimize);
 //

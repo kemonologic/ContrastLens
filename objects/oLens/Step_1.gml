@@ -80,9 +80,26 @@ var _u = -1 * keyboard_check(hotkeyMap[? "MOVE_UP"]);
 var _d = keyboard_check(hotkeyMap[? "MOVE_DOWN"]);
 var _l = -1 * keyboard_check(hotkeyMap[? "MOVE_LEFT"]);
 var _r = keyboard_check(hotkeyMap[? "MOVE_RIGHT"]);
-var _changeX = (_l + _r) * _step;
-var _changeY = (_u + _d) * _step;
 
-window_set_position(winX + _changeX,winY +  _changeY);
+if (keyboard_check(hotkeyMap[? "RESIZE_MODIFIER"])){
+	var _resizeW = (_l + _r) * winResizeWIncrement;
+	var _resizeH = (_u + _d) * winResizeHIncrement;
+	if (_resizeW != 0 || _resizeH != 0){
+		var _newW = winW + _resizeW;
+		var _newH = winH + _resizeH;
+		window_set_size(_newW,_newH);
+		var offsetX = floor((_newW - winW) / 2);
+		var offsetY = floor((_newH - winH) / 2);
+		window_set_position(winX - offsetX,winY - offsetY);
+	}
+}
+else{
+	var _changeX = (_l + _r) * winMoveIncrement;
+	var _changeY = (_u + _d) * winMoveIncrement;
+	window_set_position(winX + _changeX,winY +  _changeY);
+}
 
-
+winW = window_get_width();
+winH = window_get_height();
+winX = window_get_x();
+winY = window_get_y();
