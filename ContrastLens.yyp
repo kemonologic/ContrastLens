@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "9f5985b2-6cce-4450-a7fa-95596de11b8a",
+            "Value": {
+                "id": "98ddd015-ca4d-40f6-9156-92f3857ce13e",
+                "resourcePath": "scripts\\range_convert\\range_convert.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "0c7a9e8f-4d66-4ba0-8d51-4aea0a252fc9",
@@ -290,7 +298,8 @@
     "script_order": [
         "75785784-ceed-44cb-b804-bb47bd5fbebd",
         "e6d4d5e9-4a79-47c3-bd8c-3e43414db173",
-        "32b2362b-2b7c-4833-a29b-6dbfc866768d"
+        "32b2362b-2b7c-4833-a29b-6dbfc866768d",
+        "9f5985b2-6cce-4450-a7fa-95596de11b8a"
     ],
     "tutorial": ""
 }

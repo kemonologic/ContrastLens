@@ -35,10 +35,10 @@ options_contrast[NORMRANGE.vmax] = 1.5;
 options_contrast[NORMRANGE.vdefault] = 1;
 options_contrast[NORMRANGE.vincrement] = 0.1;
 
-options_contrast[NORMRANGE.vmin] = 10;
-options_contrast[NORMRANGE.vmax] = 120;
-options_contrast[NORMRANGE.vdefault] = 60;
-options_contrast[NORMRANGE.vincrement] = 10;
+options_interval[NORMRANGE.vmin] = 15;
+options_interval[NORMRANGE.vmax] = 120;
+options_interval[NORMRANGE.vdefault] = 60;
+options_interval[NORMRANGE.vincrement] = 10;
 
 
 //window_set_cursor(cr_none);
@@ -52,8 +52,8 @@ window_command_hook(window_command_restore);
 //window_set_taskbar_button_visible(false);
 //window_set_background_redraw()
 game_set_speed(60,gamespeed_fps);
-mode = LENS_MODE.live;
-interval = 60;
+mode = LENS_MODE.capture;
+interval = options_interval[NORMRANGE.vdefault];
 cnt = 0;
 
 finderEnabled = false;
