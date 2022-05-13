@@ -41,7 +41,7 @@ options_brightness[NORMRANGE.vdefault] = 0;
 options_brightness[NORMRANGE.vincrement] = 0.03;
 
 options_contrast[NORMRANGE.vmin] = 0.5;
-options_contrast[NORMRANGE.vmax] = 1.5;
+options_contrast[NORMRANGE.vmax] = 2;
 options_contrast[NORMRANGE.vdefault] = 1;
 options_contrast[NORMRANGE.vincrement] = 0.1;
 
