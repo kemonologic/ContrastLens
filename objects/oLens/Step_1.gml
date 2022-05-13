@@ -74,8 +74,6 @@ if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_SHADER"])){
 }
 
 // window movement
-var _step = 5;
-
 var _u = -1 * keyboard_check(hotkeyMap[? "MOVE_UP"]);
 var _d = keyboard_check(hotkeyMap[? "MOVE_DOWN"]);
 var _l = -1 * keyboard_check(hotkeyMap[? "MOVE_LEFT"]);
