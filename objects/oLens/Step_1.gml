@@ -97,7 +97,7 @@ else{
 	window_set_position(winX + _changeX,winY +  _changeY);
 }
 
-winW = window_get_width();
-winH = window_get_height();
+//winW = window_get_width();
+//winH = window_get_height();
 winX = window_get_x();
 winY = window_get_y();
