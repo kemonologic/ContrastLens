@@ -10,6 +10,11 @@ if (!surface_exists(captureSurface)){
 
 // keyboard input
 
+// finder
+if (keyboard_check_pressed(hotkeyMap[? "CLOSE"])){
+	game_end();
+}
+
 // interval
 var _intervalDecreased = keyboard_check_pressed(hotkeyMap[? "INTERVAL_DECREASE"]);
 var _intervalIncreased = keyboard_check_pressed(hotkeyMap[? "INTERVAL_INCREASE"]);
