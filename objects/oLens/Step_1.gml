@@ -10,10 +10,23 @@ if (!surface_exists(captureSurface)){
 
 // keyboard input
 
-// finder
+// Close 
 if (keyboard_check_pressed(hotkeyMap[? "CLOSE"])){
 	game_end();
 }
+
+// brightness
+if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
+	var _brightnessDecreased = keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_DECREASE"]);
+	var _brightnessIncreased = keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_INCREASE"]);
+	var _brightnessChange = ((_brightnessDecreased * -1) + _brightnessIncreased) * options_brightness[NORMRANGE.vincrement];
+	brightness = clamp(brightness + _brightnessChange,options_brightness[NORMRANGE.vmin],options_brightness[NORMRANGE.vmax]);
+	shader_set_uniform_f(shader_bUniform,brightness);
+}
+
+
+// contrast
+
 
 // interval
 var _intervalDecreased = keyboard_check_pressed(hotkeyMap[? "INTERVAL_DECREASE"]);
