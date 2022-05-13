@@ -30,6 +30,17 @@ if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
 
 
 // contrast
+if (keyboard_check(hotkeyMap[? "CONTRAST_MODIFIER"])){
+	var _contrastDecreased = keyboard_check_pressed(hotkeyMap[? "CONTRAST_DECREASE"]);
+	var _contrastIncreased = keyboard_check_pressed(hotkeyMap[? "CONTRAST_INCREASE"]);
+	var _contrastChange = ((_contrastDecreased * -1) + _contrastIncreased) * options_contrast[NORMRANGE.vincrement];
+	contrast = clamp(contrast + _contrastChange,options_contrast[NORMRANGE.vmin],options_contrast[NORMRANGE.vmax]);
+	
+	if (keyboard_check_pressed(hotkeyMap[? "CONTRAST_RESET"])){
+		contrast = options_contrast[NORMRANGE.vdefault];
+	}
+	shader_set_uniform_f(shader_cUniform,contrast);
+}
 
 
 // interval

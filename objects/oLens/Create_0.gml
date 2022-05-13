@@ -33,6 +33,7 @@ hotkeyMap[? "BRIGHTNESS_RESET"] = key_lookup("BACKSPACE");
 hotkeyMap[? "CONTRAST_DECREASE"] = key_lookup("MINUS");
 hotkeyMap[? "CONTRAST_INCREASE"] = key_lookup("PLUS");
 hotkeyMap[? "CONTRAST_MODIFIER"] = key_lookup("CTRL");
+hotkeyMap[? "CONTRAST_RESET"] = key_lookup("BACKSPACE");
 
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
