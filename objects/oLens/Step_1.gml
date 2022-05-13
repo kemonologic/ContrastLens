@@ -21,6 +21,10 @@ if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
 	var _brightnessIncreased = keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_INCREASE"]);
 	var _brightnessChange = ((_brightnessDecreased * -1) + _brightnessIncreased) * options_brightness[NORMRANGE.vincrement];
 	brightness = clamp(brightness + _brightnessChange,options_brightness[NORMRANGE.vmin],options_brightness[NORMRANGE.vmax]);
+	
+	if (keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_RESET"])){
+		brightness = options_brightness[NORMRANGE.vdefault];
+	}
 	shader_set_uniform_f(shader_bUniform,brightness);
 }
 

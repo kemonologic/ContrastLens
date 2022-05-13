@@ -25,10 +25,19 @@ hotkeyMap[? "INTERVAL_INCREASE"] = key_lookup("E");
 hotkeyMap[? "TOGGLE_FINDER"] = key_lookup("F");
 hotkeyMap[? "TOGGLE_SHADER"] = key_lookup("I");
 
+hotkeyMap[? "BRIGHTNESS_DECREASE"] = key_lookup("MINUS");
+hotkeyMap[? "BRIGHTNESS_INCREASE"] = key_lookup("PLUS");
+hotkeyMap[? "BRIGHTNESS_MODIFIER"] = key_lookup("SHIFT");
+hotkeyMap[? "BRIGHTNESS_RESET"] = key_lookup("BACKSPACE");
+
+hotkeyMap[? "CONTRAST_DECREASE"] = key_lookup("MINUS");
+hotkeyMap[? "CONTRAST_INCREASE"] = key_lookup("PLUS");
+hotkeyMap[? "CONTRAST_MODIFIER"] = key_lookup("CTRL");
+
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
 options_brightness[NORMRANGE.vdefault] = 0;
-options_brightness[NORMRANGE.vincrement] = 0.05;
+options_brightness[NORMRANGE.vincrement] = 0.03;
 
 options_contrast[NORMRANGE.vmin] = 0.5;
 options_contrast[NORMRANGE.vmax] = 1.5;
