@@ -81,14 +81,16 @@ var _r = keyboard_check(hotkeyMap[? "MOVE_RIGHT"]);
 
 if (keyboard_check(hotkeyMap[? "RESIZE_MODIFIER"])){
 	var _resizeW = (_l + _r) * winResizeWIncrement;
-	var _resizeH = (_u + _d) * winResizeHIncrement;
+	var _resizeH = ((_u + _d) * -1) * winResizeHIncrement; // flip to make up bigger
 	if (_resizeW != 0 || _resizeH != 0){
-		var _newW = winW + _resizeW;
-		var _newH = winH + _resizeH;
+		var _newW = window_get_width() + _resizeW;
+		var _newH = window_get_height() + _resizeH;
+		
 		window_set_size(_newW,_newH);
-		var offsetX = floor((_newW - winW) / 2);
-		var offsetY = floor((_newH - winH) / 2);
-		window_set_position(winX - offsetX,winY - offsetY);
+		surface_resize(captureSurface,winW,winH);
+		var offsetX = floor((window_get_width() - _newW) / 2);
+		var offsetY = floor((window_get_height() - _newH) / 2);
+		window_set_position(window_get_x() + offsetX,window_get_y() + offsetY);
 	}
 }
 else{
@@ -97,7 +99,8 @@ else{
 	window_set_position(winX + _changeX,winY +  _changeY);
 }
 
-//winW = window_get_width();
-//winH = window_get_height();
+winW = window_get_width();
+winH = window_get_height(); // this stuff breaks live mode
 winX = window_get_x();
 winY = window_get_y();
+
