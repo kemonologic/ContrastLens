@@ -99,8 +99,10 @@ else{
 	window_set_position(winX + _changeX,winY +  _changeY);
 }
 
-winW = window_get_width();
-winH = window_get_height(); // this stuff breaks live mode
+if (window_get_width() != 1){
+	winW = window_get_width();
+	winH = window_get_height();
+}
 winX = window_get_x();
 winY = window_get_y();
 
