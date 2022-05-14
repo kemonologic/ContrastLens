@@ -20,3 +20,4 @@ draw_text(_x + 1,_y - 1,_string);
 draw_text(_x + 1,_y + 1,_string);
 draw_set_color(_color);
 draw_text(_x,_y,_string);
+draw_set_color(c_white);

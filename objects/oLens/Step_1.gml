@@ -16,6 +16,10 @@ if (!surface_exists(uiSurface)){
 	surface_reset_target();
 }
 
+if (keyboard_check_pressed(captureKey) || mode == LENS_MODE.live){
+	justStarted = false;
+}
+
 // keyboard input
 
 // Close 

@@ -14,6 +14,8 @@ enum NORMRANGE{
 	vincrement
 }
 
+justStarted = true;
+
 briconChangeTimer = undefined;
 briconLastChanged = "Brightness";
 modeChangeTimer = undefined;
@@ -85,7 +87,7 @@ shader_cUniform = shader_get_uniform(shader,"contrast");
 contrast = 1.0;
 brightness = 0.0;
 
-captureBuffer  =buffer_create(1, buffer_grow, 1);
+captureBuffer = buffer_create(1, buffer_grow, 1);
 captureSurface = -1;
 captureKey = vk_enter;
 winX = 500;
