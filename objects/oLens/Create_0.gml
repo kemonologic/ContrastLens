@@ -1,4 +1,5 @@
 application_surface_draw_enable(false);
+fuwa_init();
 
 enum LENS_MODE{
 	capture,
