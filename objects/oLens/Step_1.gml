@@ -28,20 +28,22 @@ if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
 	var _brightnessDecreased = keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_DECREASE"]);
 	var _brightnessIncreased = keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_INCREASE"]);
 	var _brightnessChange = ((_brightnessDecreased * -1) + _brightnessIncreased) * options_brightness[NORMRANGE.vincrement];
+	var _brightnessReset = keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_RESET"]);
 	brightness = clamp(brightness + _brightnessChange,options_brightness[NORMRANGE.vmin],options_brightness[NORMRANGE.vmax]);
 	
-	if (keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_RESET"])){
+	if (_brightnessReset){
 		brightness = options_brightness[NORMRANGE.vdefault];
 	}
 	shader_set_uniform_f(shader_bUniform,brightness);
-	
-	if (briconChangeTimer != undefined){
-		timer_restart(briconChangeTimer);
+	if ((_brightnessDecreased ^^ _brightnessIncreased) || _brightnessReset){
+		if (briconChangeTimer != undefined){
+			timer_restart(briconChangeTimer);
+		}
+		else{
+			briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+		}
+		briconLastChanged = "Brightness";
 	}
-	else{
-		briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
-	}
-	briconLastChanged = "Brightness";
 }
 
 
@@ -50,19 +52,22 @@ if (keyboard_check(hotkeyMap[? "CONTRAST_MODIFIER"])){
 	var _contrastDecreased = keyboard_check_pressed(hotkeyMap[? "CONTRAST_DECREASE"]);
 	var _contrastIncreased = keyboard_check_pressed(hotkeyMap[? "CONTRAST_INCREASE"]);
 	var _contrastChange = ((_contrastDecreased * -1) + _contrastIncreased) * options_contrast[NORMRANGE.vincrement];
+	var _contrastReset = keyboard_check_pressed(hotkeyMap[? "CONTRAST_RESET"]);
 	contrast = clamp(contrast + _contrastChange,options_contrast[NORMRANGE.vmin],options_contrast[NORMRANGE.vmax]);
 	
-	if (keyboard_check_pressed(hotkeyMap[? "CONTRAST_RESET"])){
+	if (_contrastReset){
 		contrast = options_contrast[NORMRANGE.vdefault];
 	}
 	shader_set_uniform_f(shader_cUniform,contrast);
-	if (briconChangeTimer != undefined){
-		timer_restart(briconChangeTimer);
+	if ((_contrastDecreased ^^ _contrastIncreased) || _contrastReset){
+		if (briconChangeTimer != undefined){
+			timer_restart(briconChangeTimer);
+		}
+		else{
+			briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+		}
+		briconLastChanged = "Contrast";	
 	}
-	else{
-		briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
-	}
-	briconLastChanged = "Contrast";	
 }
 
 
@@ -83,6 +88,12 @@ if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_FINDER"])){
 // mode
 if (keyboard_check_pressed(hotkeyMap[? "CHANGE_MODE"])){
 	mode = (mode + 1) % LENS_MODE.__SIZE;
+	if (modeChangeTimer != undefined){
+		timer_restart(modeChangeTimer);
+	}
+	else{
+		modeChangeTimer = timer_create(noticeFadeSpeed,time.s);
+	}
 }
 
 // shader
