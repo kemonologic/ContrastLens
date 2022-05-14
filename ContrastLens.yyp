@@ -583,6 +583,14 @@
             }
         },
         {
+            "Key": "958747b4-8074-4b6a-93a5-be681539b4ef",
+            "Value": {
+                "id": "23effacd-afba-4168-979b-9e0844adfe6a",
+                "resourcePath": "fonts\\uiFont\\uiFont.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "96af2fe7-43f9-4091-a10c-741a9073ae57",
             "Value": {
                 "id": "694bc662-568c-4ab7-a423-13c1b2367099",

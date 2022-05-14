@@ -1,4 +1,5 @@
 surface_set_target(uiSurface);
+draw_set_font(uiFont);
 draw_clear_alpha(c_black,0);
 draw_set_color(c_lime);
 if (!is_undefined(briconChangeTimer) && !timer_check(briconChangeTimer)){
