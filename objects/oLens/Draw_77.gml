@@ -11,4 +11,5 @@ if (surface_exists(captureSurface)){
 			shader_set_uniform_f(shader_cUniform,contrast);
 		}
 	}
+	draw_surface(uiSurface,0,0);
 }

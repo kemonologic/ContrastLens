@@ -1,5 +1,3 @@
-fuwa_run();
-
 if (mode == LENS_MODE.capture){
 	lens_state_capture();
 }

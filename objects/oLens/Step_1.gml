@@ -1,9 +1,17 @@
+fuwa_run();
+
 winX = window_get_x();
 winY = window_get_y();
 
 if (!surface_exists(captureSurface)){
 	captureSurface = surface_create(max(320,winW),max(240,winH));
 	surface_set_target(captureSurface);
+	draw_clear_alpha(c_black,0);
+	surface_reset_target();
+}
+if (!surface_exists(uiSurface)){
+	uiSurface = surface_create(max(320,winW),max(240,winH));
+	surface_set_target(uiSurface);
 	draw_clear_alpha(c_black,0);
 	surface_reset_target();
 }
@@ -26,6 +34,14 @@ if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
 		brightness = options_brightness[NORMRANGE.vdefault];
 	}
 	shader_set_uniform_f(shader_bUniform,brightness);
+	
+	if (briconChangeTimer != undefined){
+		timer_restart(briconChangeTimer);
+	}
+	else{
+		briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+	}
+	briconLastChanged = "Brightness";
 }
 
 
@@ -40,6 +56,13 @@ if (keyboard_check(hotkeyMap[? "CONTRAST_MODIFIER"])){
 		contrast = options_contrast[NORMRANGE.vdefault];
 	}
 	shader_set_uniform_f(shader_cUniform,contrast);
+	if (briconChangeTimer != undefined){
+		timer_restart(briconChangeTimer);
+	}
+	else{
+		briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+	}
+	briconLastChanged = "Contrast";	
 }
 
 

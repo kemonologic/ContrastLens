@@ -14,6 +14,11 @@ enum NORMRANGE{
 	vincrement
 }
 
+briconChangeTimer = undefined;
+briconLastChanged = "Brightness";
+modeChangeTimer = undefined;
+noticeFadeSpeed = 2;
+uiSurface = -1;
 
 hotkeyMap = ds_map_create();
 
