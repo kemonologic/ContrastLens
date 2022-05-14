@@ -4,7 +4,6 @@ if (mode == LENS_MODE.capture){
 else if (mode == LENS_MODE.live){
 	if (cnt % interval == 0){
 		window_set_size(1,1);
-	
 	}
 	else{
 		if (window_get_width() == 1){
