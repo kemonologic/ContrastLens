@@ -99,8 +99,3 @@ winMoveIncrement = 5;
 //window_command_run(window_command_minimize);
 //
 //window_set_topmost(1);
-
-
-shader_set(shader);
-shader_set_uniform_f(shader_bUniform,brightness);
-shader_set_uniform_f(shader_cUniform,contrast);
