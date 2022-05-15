@@ -47,14 +47,6 @@
             }
         },
         {
-            "Key": "0322ec8c-6694-423b-828a-56cba5e98175",
-            "Value": {
-                "id": "8d9c7020-3fa8-4c65-aa9d-21879aa03475",
-                "resourcePath": "datafiles_yy\\display_screenshot.html.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "03a22c51-9911-46c1-a74c-98bf4e967c33",
             "Value": {
                 "id": "989cd31d-8e3e-4c93-9243-a1f92aee3ed0",

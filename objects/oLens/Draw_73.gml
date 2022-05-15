@@ -11,6 +11,15 @@ if (!is_undefined(briconChangeTimer) && !timer_check(briconChangeTimer)){
 	_indicator = string_insert("|",_indicator,_progressPos + 1);
 	draw_text_shadow_4(175,5,_indicator,c_lime);
 }
+if (!is_undefined(intervalChangeTimer) && !timer_check(intervalChangeTimer)){
+	draw_text_shadow_4(5,45,"Interval",c_lime);
+	var _indicator = "|--------------|";
+	var _progressPos = range_convert(options_interval[NORMRANGE.vmin],options_interval[NORMRANGE.vmax],0,15,interval);
+	_indicator = string_insert("|",_indicator,_progressPos + 1);
+	draw_text_shadow_4(175,45,_indicator,c_lime);
+	draw_text_shadow_4(360,45,string(interval) + "ms",c_lime);
+}
+
 if (!is_undefined(modeChangeTimer) && !timer_check(modeChangeTimer)){
 	var _modeStr = mode == LENS_MODE.capture ? "Capture" : "Live";
 	draw_text_shadow_4(5,winH - 35,_modeStr,c_lime);	

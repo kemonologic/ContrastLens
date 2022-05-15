@@ -82,7 +82,17 @@ var _intervalChange = ((_intervalDecreased * -1) + _intervalIncreased) * options
 
 if (mode == LENS_MODE.live){
 	interval = clamp(interval + _intervalChange,options_interval[NORMRANGE.vmin],options_interval[NORMRANGE.vmax]);
+	if (_intervalChange != 0){
+		if (intervalChangeTimer != undefined){
+			timer_restart(intervalChangeTimer);
+		}
+		else{
+			intervalChangeTimer = timer_create(noticeFadeSpeed,time.s);
+		}
+	}
 }
+
+
 
 // finder
 if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_FINDER"])){
