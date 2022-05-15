@@ -1,8 +1,8 @@
 {
-    "id": "ff65ea78-4eb3-4e09-b4a2-1e67deba1cea",
+    "id": "c1256098-d40c-4b82-bbd0-dac6c90faae5",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "trace",
+    "name": "fuwa_get_clocktime",
     "IsCompatibility": false,
     "IsDnD": false
 }
