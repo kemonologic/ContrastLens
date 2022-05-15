@@ -11,19 +11,19 @@ Some magnification tools, such as Windows 10's, do include an "invert colors" mo
 ## Usage
 ContrastLens currently has two modes. You may switch between them by pressing the mode switch hotkey. In any mode, you can resize and move the window, change the brightness and contrast amounts, and switch between the contrast-adjustment and color-inversion filter.
 
-###Capture mode
+### Capture mode
 Captures an area of the screen and applies adjustment. The image will not be refreshed until you press the refresh hotkey again to recapture the area under the window.
 
-###Live mode
+### Live mode
 Automatically captures the area under the window. To do this, ContrastLens must periodically sample beneath the window, causing a slight flicker. You can control this with the decrease/increase interval hotkeys. Lower intervals will refresh more quickly, but higher intervals will flicker less.
 
 ### Mirror mode (planned)
 Mirror mode allows one part of the screen to mirror the other at full speed, whether on the same display or a different display, with the contrast effect applied. Mirror mode works best with multiple displays, but is also dockable.
 
-##Hotkeys
+## Hotkeys
 These only work with ContrastLens focused.
 
-###General
+### General
 
 * ESCAPE: Exit ContrastLens
 * ARROW KEYS:  Move the window
@@ -32,14 +32,14 @@ These only work with ContrastLens focused.
 * F: Toggle Finder (draws an X pattern in case you lose the window)
 * I: Toggles the color-inversion filter
 
-###Adjustment
+### Adjustment
 
 * SHIFT AND MINUS/PLUS KEYS: Decrease/increase brightness
 * SHIFT AND BACKSPACE: Reset brightness
 * CTRL AND MINUS/PLUS KEYS: Decrease/increase contrast
 * CTRL AND BACKSPACE: Reset contrast
 
-###Mode-specific behaviors
+### Mode-specific behaviors
 
  * ENTER: Refresh (in capture mode)
  * Q: Decrease refresh interval (in live mode)
