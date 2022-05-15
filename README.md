@@ -1,6 +1,4 @@
 # ContrastLens
-Accessibility tool for display contrast adjustment
-
 ContrastLens is designed to control the effective brightness and/or contrast of a movable, resizable screen area, and can be refreshed with a keypress or at an automatic interval.
 
 ## Who might need this?
