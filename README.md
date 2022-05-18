@@ -44,7 +44,7 @@ These only work with ContrastLens focused.
  * E: Increase refresh interval (in live mode)
     
 ## Dependencies
-Standalone releases are fully functional, but this project requires the following extensions to compile, which are not included in the reipository:
+Standalone releases are fully functional, but this project requires the following extensions to compile, which are not included in the repository:
 
 * https://yellowafterlife.itch.io/gamemaker-display-screenshot
 * https://yellowafterlife.itch.io/gamemaker-window-commands
