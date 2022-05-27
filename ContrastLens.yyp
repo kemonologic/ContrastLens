@@ -303,6 +303,14 @@
             }
         },
         {
+            "Key": "52ebd08e-fcd1-446c-be1e-ca826108f8c8",
+            "Value": {
+                "id": "dad16cca-729e-4b7f-80f6-5ec08e3d38c3",
+                "resourcePath": "extensions\\file_ini\\file_ini.yy",
+                "resourceType": "GMExtension"
+            }
+        },
+        {
             "Key": "53677c11-f2c1-48fc-8f80-b7bbe46338d9",
             "Value": {
                 "id": "9d9f18ca-0c2f-4f65-a769-b5b6c36c04ce",
