@@ -1,6 +1,8 @@
 application_surface_draw_enable(false);
 fuwa_init();
 
+#macro SETTINGS_PATH game_save_id + "clsettings.ini"
+
 enum LENS_MODE{
 	capture,
 	live,
@@ -13,6 +15,11 @@ enum NORMRANGE{
 	vdefault,
 	vincrement
 }
+
+if (!file_exists(SETTINGS_PATH)){
+	file_copy("clsettings_blank.ini",SETTINGS_PATH);
+}
+settingsFile = file_ini_open(SETTINGS_PATH);
 
 justStarted = true;
 

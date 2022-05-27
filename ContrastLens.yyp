@@ -751,6 +751,14 @@
             }
         },
         {
+            "Key": "b43bc078-664f-416a-a367-c56d28178432",
+            "Value": {
+                "id": "3f4c9f2b-b571-4019-886a-2341d3b2c890",
+                "resourcePath": "datafiles_yy\\clsettings_blank.ini.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "b60294e4-0f3b-4dd9-bcf2-4bd8348173a7",
             "Value": {
                 "id": "739fddd7-d5ab-4ab1-9be8-02a66e160207",
