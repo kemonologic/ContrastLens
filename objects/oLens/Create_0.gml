@@ -43,6 +43,8 @@ for (var i = 0; i < array_length_1d(hotkeysArr); i++){
 	ds_map_add(hotkeyMap,_key,_keyNum);
 }
 
+file_ini_close(settingsFile);
+
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
 options_brightness[NORMRANGE.vdefault] = 0;

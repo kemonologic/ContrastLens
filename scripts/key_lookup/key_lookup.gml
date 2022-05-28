@@ -144,6 +144,6 @@ if (string_length(key) == 1) {
 		case "DECIMAL":
 			return vk_decimal;
 		default:
-			return vk_nokey;
+			return -1;
 	}
 }
