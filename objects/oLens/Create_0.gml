@@ -43,16 +43,15 @@ for (var i = 0; i < array_length_1d(hotkeysArr); i++){
 	ds_map_add(hotkeyMap,_key,_keyNum);
 }
 
-file_ini_close(settingsFile);
 
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
-options_brightness[NORMRANGE.vdefault] = 0;
-options_brightness[NORMRANGE.vincrement] = 0.03;
+options_brightness[NORMRANGE.vdefault] = 0.0;
+options_brightness[NORMRANGE.vincrement] = 0.025;
 
 options_contrast[NORMRANGE.vmin] = 0.5;
 options_contrast[NORMRANGE.vmax] = 1.5;
-options_contrast[NORMRANGE.vdefault] = 1;
+options_contrast[NORMRANGE.vdefault] = 1.0; 
 options_contrast[NORMRANGE.vincrement] = 0.1;
 
 options_interval[NORMRANGE.vmin] = 15;
@@ -60,6 +59,19 @@ options_interval[NORMRANGE.vmax] = 120;
 options_interval[NORMRANGE.vdefault] = 60;
 options_interval[NORMRANGE.vincrement] = 10;
 
+
+var _fileBrightness = file_ini_read_real(settingsFile,"slot0","BRIGHTNESS",options_brightness[NORMRANGE.vdefault]);
+var _fileBrightnessValid = (_fileBrightness >= options_brightness[NORMRANGE.vmin] && _fileBrightness <= options_brightness[NORMRANGE.vmax]);
+var _fileContrast = file_ini_read_real(settingsFile,"slot0","CONTRAST",options_contrast[NORMRANGE.vdefault]);
+var _fileContrastValid = (_fileContrast >= options_contrast[NORMRANGE.vmin] && _fileContrast <= options_contrast[NORMRANGE.vmax]);
+var _fileInterval = file_ini_read_real(settingsFile,"slot0","INTERVAL",options_interval[NORMRANGE.vdefault]);
+var _fileIntervalValid = (_fileInterval >= options_interval[NORMRANGE.vmin] && _fileInterval <= options_interval[NORMRANGE.vmax]);
+
+contrast = _fileContrastValid ? _fileContrast : options_contrast[NORMRANGE.vdefault];
+brightness = _fileBrightnessValid ? _fileBrightness : options_brightness[NORMRANGE.vdefault];
+interval = _fileIntervalValid ? _fileInterval : options_interval[NORMRANGE.vdefault];
+
+file_ini_close(settingsFile);
 
 
 //window_set_cursor(cr_none);
@@ -74,16 +86,14 @@ window_command_hook(window_command_restore);
 //window_set_background_redraw()
 game_set_speed(60,gamespeed_fps);
 mode = LENS_MODE.capture;
-interval = options_interval[NORMRANGE.vdefault];
-cnt = 0;
 
+cnt = 0;
 finderEnabled = false;
 
 shader = sh_bricon;
 shader_bUniform = shader_get_uniform(shader,"brightness");
 shader_cUniform = shader_get_uniform(shader,"contrast");
-contrast = 1.0;
-brightness = 0.0;
+
 
 captureBuffer = buffer_create(1, buffer_grow, 1);
 captureSurface = -1;
