@@ -815,6 +815,14 @@
             }
         },
         {
+            "Key": "b975c3ce-fb90-4427-b642-f9a2c64b1b2e",
+            "Value": {
+                "id": "ffd9e1ed-9e96-4894-a4e8-c370e3dfe682",
+                "resourcePath": "datafiles_yy\\README.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "b98dbf26-066c-4160-ba33-7df683236161",
             "Value": {
                 "id": "3648ae30-b452-4c70-bf8e-f54202a521ae",
@@ -1004,6 +1012,14 @@
                 "id": "f6381791-096e-44bd-86c7-be66761b7d5c",
                 "resourcePath": "scripts\\timer_set_offset\\timer_set_offset.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e1f50f6a-3589-4d54-8ca6-78005207403f",
+            "Value": {
+                "id": "536c9a61-e573-49be-84e2-80fb48cff9a2",
+                "resourcePath": "datafiles_yy\\CHANGELOG.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {

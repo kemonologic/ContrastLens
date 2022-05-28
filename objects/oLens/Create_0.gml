@@ -34,6 +34,16 @@ if (!file_exists(SETTINGS_PATH)){
 if (!file_exists(HOTKEYS_PATH)){
 	file_copy("cl_hotkeys_blank.ini",HOTKEYS_PATH);
 }
+if (file_exists("README.txt")){
+	file_delete("README.txt");
+}
+file_copy("README.txt","README.txt");
+
+if (file_exists("CHANGELOG.txt")){
+	file_delete("CHANGELOG.txt");
+}
+file_copy("CHANGELOG.txt","CHANGELOG.txt");
+
 settingsFile = file_ini_open(SETTINGS_PATH);
 hotkeysFile = file_ini_open(HOTKEYS_PATH);
 
