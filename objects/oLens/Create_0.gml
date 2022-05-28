@@ -19,15 +19,15 @@ enum NORMRANGE{
 
 justStarted = true;
 
-briconChangeTimer = undefined;
-briconLastChanged = "Brightness";
-modeChangeTimer = undefined;
-intervalChangeTimer = undefined;
-noticeFadeSpeed = 2;
-uiSurface = -1;
+winX = 500;
+winY = 500;
+winW = room_width;
+winH = room_height;
+winResizeWIncrement = 10;
+winResizeHIncrement = 10;
+winMoveIncrement = 5;
 
-
-
+// FILE HANDLING
 if (!file_exists(SETTINGS_PATH)){
 	file_copy("cl_settings_blank.ini",SETTINGS_PATH);
 }
@@ -76,6 +76,15 @@ contrast = _fileContrastValid ? _fileContrast : options_contrast[NORMRANGE.vdefa
 brightness = _fileBrightnessValid ? _fileBrightness : options_brightness[NORMRANGE.vdefault];
 interval = _fileIntervalValid ? _fileInterval : options_interval[NORMRANGE.vdefault];
 
+
+var _fileWinW = file_ini_read_int(settingsFile,"window","WIDTH",winW);
+var _fileWinH = file_ini_read_int(settingsFile,"window","HEIGHT",winW);
+if (_fileWinW > 0 && _fileWinH > 0){
+	winW = _fileWinW;
+	winH = _fileWinH;
+	window_set_size(winW,winH);
+}
+
 file_ini_close(settingsFile);
 file_ini_close(hotkeysFile);
 
@@ -100,17 +109,19 @@ shader = sh_bricon;
 shader_bUniform = shader_get_uniform(shader,"brightness");
 shader_cUniform = shader_get_uniform(shader,"contrast");
 
+briconChangeTimer = undefined;
+briconLastChanged = "Brightness";
+modeChangeTimer = undefined;
+intervalChangeTimer = undefined;
+noticeFadeSpeed = 2;
+uiSurface = -1;
+
+
 
 captureBuffer = buffer_create(1, buffer_grow, 1);
 captureSurface = -1;
-winX = 500;
-winY = 500;
-winW = room_width;
-winH = room_height;
 captureSuccess = -1;
-winResizeWIncrement = 10;
-winResizeHIncrement = 10;
-winMoveIncrement = 5;
+
 
 //window_command_run(window_command_minimize);
 //
