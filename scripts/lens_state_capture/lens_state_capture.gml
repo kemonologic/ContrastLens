@@ -1,4 +1,4 @@
-if (keyboard_check_pressed(captureKey)){
+if (keyboard_check_pressed(hotkeyMap[? "CAPTURE"])){
 	//window_set_size(1,1);
 	window_set_visible_w(false);
 	surface_set_target(captureSurface);

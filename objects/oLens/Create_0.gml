@@ -43,31 +43,6 @@ for (var i = 0; i < array_length_1d(hotkeysArr); i++){
 	ds_map_add(hotkeyMap,_key,_keyNum);
 }
 
-/*
-hotkeyMap[? "MOVE_LEFT"] = vk_left;
-hotkeyMap[? "MOVE_RIGHT"] = vk_right;
-hotkeyMap[? "MOVE_UP"] = vk_up;
-hotkeyMap[? "MOVE_DOWN"] = vk_down;
-hotkeyMap[? "RESIZE_MODIFIER"] = vk_shift;
-
-
-hotkeyMap[? "CHANGE_MODE"] = key_lookup("M");
-hotkeyMap[? "INTERVAL_DECREASE"] = key_lookup("Q");
-hotkeyMap[? "INTERVAL_INCREASE"] = key_lookup("E");
-hotkeyMap[? "TOGGLE_FINDER"] = key_lookup("F");
-hotkeyMap[? "TOGGLE_INVERT"] = key_lookup("I");
-
-hotkeyMap[? "BRIGHTNESS_DECREASE"] = key_lookup("MINUS");
-hotkeyMap[? "BRIGHTNESS_INCREASE"] = key_lookup("PLUS");
-hotkeyMap[? "BRIGHTNESS_MODIFIER"] = key_lookup("SHIFT");
-hotkeyMap[? "BRIGHTNESS_RESET"] = key_lookup("BACKSPACE");
-
-hotkeyMap[? "CONTRAST_DECREASE"] = key_lookup("MINUS");
-hotkeyMap[? "CONTRAST_INCREASE"] = key_lookup("PLUS");
-hotkeyMap[? "CONTRAST_MODIFIER"] = key_lookup("CTRL");
-hotkeyMap[? "CONTRAST_RESET"] = key_lookup("BACKSPACE");
-*/
-
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
 options_brightness[NORMRANGE.vdefault] = 0;
@@ -110,7 +85,6 @@ brightness = 0.0;
 
 captureBuffer = buffer_create(1, buffer_grow, 1);
 captureSurface = -1;
-captureKey = vk_enter;
 winX = 500;
 winY = 500;
 winW = room_width;
