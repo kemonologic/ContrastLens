@@ -1,7 +1,8 @@
 application_surface_draw_enable(false);
 fuwa_init();
 
-#macro SETTINGS_PATH game_save_id + "clsettings.ini"
+#macro SETTINGS_PATH game_save_id + "cl_settings.ini"
+#macro HOTKEYS_PATH game_save_id + "cl_settings.ini"
 
 enum LENS_MODE{
 	capture,
@@ -28,17 +29,21 @@ uiSurface = -1;
 
 
 if (!file_exists(SETTINGS_PATH)){
-	file_copy("clsettings_blank.ini",SETTINGS_PATH);
+	file_copy("cl_settings_blank.ini",SETTINGS_PATH);
+}
+if (!file_exists(HOTKEYS_PATH)){
+	file_copy("cl_hotkeys_blank.ini",HOTKEYS_PATH);
 }
 settingsFile = file_ini_open(SETTINGS_PATH);
+hotkeysFile = file_ini_open(HOTKEYS_PATH);
 
-var hotkeysArr = file_ini_key_names(settingsFile,"hotkeys");
+var hotkeysArr = file_ini_key_names(hotkeysFile,"hotkeys");
 
 hotkeyMap = ds_map_create();
 hotkeyMap[? "CLOSE"] = vk_escape;
 for (var i = 0; i < array_length_1d(hotkeysArr); i++){
 	var _key = hotkeysArr[i];
-	var _keyStr = file_ini_read_string(settingsFile,"hotkeys",_key);
+	var _keyStr = file_ini_read_string(hotkeysFile,"hotkeys",_key);
 	var _keyNum = key_lookup(_keyStr);
 	ds_map_add(hotkeyMap,_key,_keyNum);
 }
@@ -72,6 +77,7 @@ brightness = _fileBrightnessValid ? _fileBrightness : options_brightness[NORMRAN
 interval = _fileIntervalValid ? _fileInterval : options_interval[NORMRANGE.vdefault];
 
 file_ini_close(settingsFile);
+file_ini_close(hotkeysFile);
 
 
 //window_set_cursor(cr_none);

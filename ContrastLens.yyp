@@ -487,6 +487,14 @@
             }
         },
         {
+            "Key": "7c9b27c5-1fb0-4c15-ad86-3d79a6a4b138",
+            "Value": {
+                "id": "afc05f44-5f68-4b35-8c90-a69c2bacf75e",
+                "resourcePath": "datafiles_yy\\cl_hotkeys_blank.ini.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "7f4f6989-7af9-4b81-b9ed-615f478d566d",
             "Value": {
                 "id": "0b929d8b-ed72-43fe-8d30-8dcfdd4d9c83",
@@ -754,7 +762,7 @@
             "Key": "b43bc078-664f-416a-a367-c56d28178432",
             "Value": {
                 "id": "3f4c9f2b-b571-4019-886a-2341d3b2c890",
-                "resourcePath": "datafiles_yy\\clsettings_blank.ini.yy",
+                "resourcePath": "datafiles_yy\\cl_settings_blank.ini.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
