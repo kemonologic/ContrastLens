@@ -2,7 +2,7 @@ application_surface_draw_enable(false);
 fuwa_init();
 
 #macro SETTINGS_PATH game_save_id + "cl_settings.ini"
-#macro HOTKEYS_PATH game_save_id + "cl_settings.ini"
+#macro HOTKEYS_PATH game_save_id + "cl_hotkeys.ini"
 
 enum LENS_MODE{
 	capture,
