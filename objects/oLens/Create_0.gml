@@ -16,11 +16,6 @@ enum NORMRANGE{
 	vincrement
 }
 
-if (!file_exists(SETTINGS_PATH)){
-	file_copy("clsettings_blank.ini",SETTINGS_PATH);
-}
-settingsFile = file_ini_open(SETTINGS_PATH);
-
 justStarted = true;
 
 briconChangeTimer = undefined;
@@ -30,20 +25,37 @@ intervalChangeTimer = undefined;
 noticeFadeSpeed = 2;
 uiSurface = -1;
 
-hotkeyMap = ds_map_create();
 
+
+if (!file_exists(SETTINGS_PATH)){
+	file_copy("clsettings_blank.ini",SETTINGS_PATH);
+}
+settingsFile = file_ini_open(SETTINGS_PATH);
+
+var hotkeysArr = file_ini_key_names(settingsFile,"hotkeys");
+
+hotkeyMap = ds_map_create();
+hotkeyMap[? "CLOSE"] = vk_escape;
+for (var i = 0; i < array_length_1d(hotkeysArr); i++){
+	var _key = hotkeysArr[i];
+	var _keyStr = file_ini_read_string(settingsFile,"hotkeys",_key);
+	var _keyNum = key_lookup(_keyStr);
+	ds_map_add(hotkeyMap,_key,_keyNum);
+}
+
+/*
 hotkeyMap[? "MOVE_LEFT"] = vk_left;
 hotkeyMap[? "MOVE_RIGHT"] = vk_right;
 hotkeyMap[? "MOVE_UP"] = vk_up;
 hotkeyMap[? "MOVE_DOWN"] = vk_down;
 hotkeyMap[? "RESIZE_MODIFIER"] = vk_shift;
 
-hotkeyMap[? "CLOSE"] = vk_escape;
+
 hotkeyMap[? "CHANGE_MODE"] = key_lookup("M");
 hotkeyMap[? "INTERVAL_DECREASE"] = key_lookup("Q");
 hotkeyMap[? "INTERVAL_INCREASE"] = key_lookup("E");
 hotkeyMap[? "TOGGLE_FINDER"] = key_lookup("F");
-hotkeyMap[? "TOGGLE_SHADER"] = key_lookup("I");
+hotkeyMap[? "TOGGLE_INVERT"] = key_lookup("I");
 
 hotkeyMap[? "BRIGHTNESS_DECREASE"] = key_lookup("MINUS");
 hotkeyMap[? "BRIGHTNESS_INCREASE"] = key_lookup("PLUS");
@@ -54,6 +66,7 @@ hotkeyMap[? "CONTRAST_DECREASE"] = key_lookup("MINUS");
 hotkeyMap[? "CONTRAST_INCREASE"] = key_lookup("PLUS");
 hotkeyMap[? "CONTRAST_MODIFIER"] = key_lookup("CTRL");
 hotkeyMap[? "CONTRAST_RESET"] = key_lookup("BACKSPACE");
+*/
 
 options_brightness[NORMRANGE.vmin] = -0.5;
 options_brightness[NORMRANGE.vmax] = 0.5;
@@ -69,6 +82,7 @@ options_interval[NORMRANGE.vmin] = 15;
 options_interval[NORMRANGE.vmax] = 120;
 options_interval[NORMRANGE.vdefault] = 60;
 options_interval[NORMRANGE.vincrement] = 10;
+
 
 
 //window_set_cursor(cr_none);

@@ -111,7 +111,7 @@ if (keyboard_check_pressed(hotkeyMap[? "CHANGE_MODE"])){
 }
 
 // shader
-if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_SHADER"])){
+if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_INVERT"])){
 	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
 }
 
