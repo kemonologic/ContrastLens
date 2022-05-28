@@ -78,8 +78,8 @@ interval = _fileIntervalValid ? _fileInterval : options_interval[NORMRANGE.vdefa
 
 
 var _fileWinW = file_ini_read_int(settingsFile,"window","WIDTH",winW);
-var _fileWinH = file_ini_read_int(settingsFile,"window","HEIGHT",winW);
-if (_fileWinW > 0 && _fileWinH > 0){
+var _fileWinH = file_ini_read_int(settingsFile,"window","HEIGHT",winH);
+if (_fileWinW >= room_width && _fileWinH >= room_height){
 	winW = _fileWinW;
 	winH = _fileWinH;
 	window_set_size(winW,winH);

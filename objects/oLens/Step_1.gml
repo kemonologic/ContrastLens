@@ -125,8 +125,8 @@ if (keyboard_check(hotkeyMap[? "RESIZE_MODIFIER"])){
 	var _resizeW = (_l + _r) * winResizeWIncrement;
 	var _resizeH = ((_u + _d) * -1) * winResizeHIncrement; // flip to make up bigger
 	if (_resizeW != 0 || _resizeH != 0){
-		var _newW = window_get_width() + _resizeW;
-		var _newH = window_get_height() + _resizeH;
+		var _newW = max(room_width,window_get_width() + _resizeW);
+		var _newH = max(room_height,window_get_height() + _resizeH);
 		
 		window_set_size(_newW,_newH);
 		surface_resize(captureSurface,winW,winH);
