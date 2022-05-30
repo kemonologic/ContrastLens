@@ -89,9 +89,16 @@ interval = _fileIntervalValid ? _fileInterval : options_interval[NORMRANGE.vdefa
 
 var _fileWinW = file_ini_read_int(settingsFile,"window","WIDTH",winW);
 var _fileWinH = file_ini_read_int(settingsFile,"window","HEIGHT",winH);
+var _fileWinX = file_ini_read_int(settingsFile,"window","X",-1);
+var _fileWinY = file_ini_read_int(settingsFile,"window","Y",-1);
 if (_fileWinW >= room_width && _fileWinH >= room_height){
 	winW = _fileWinW;
 	winH = _fileWinH;
+	if (_fileWinX != -1 && _fileWinY != -1){
+		winX = _fileWinX;
+		winY = _fileWinY;
+		window_set_position(winX,winY);
+	}
 	window_set_size(winW,winH);
 }
 
@@ -114,6 +121,7 @@ mode = LENS_MODE.capture;
 
 cnt = 0;
 finderEnabled = false;
+presetSlot = 0;
 
 shader = sh_bricon;
 shader_bUniform = shader_get_uniform(shader,"brightness");

@@ -6,7 +6,7 @@
 	Preset slots: You can now load and save presets for contrast, brightness, and interval settings to multiple slots. After you've run ContrastLens for the first time, these are stored in %localappdata%\ContrastLens\cl_settings.ini. Slot0 is the "default" and will be automatically loaded on startup and saved on shutdown. Use keys 1-9 on the keyboard to load other slots. Slots can be named in the ini file for ease-of-use; if a slot doesn't have a name, you'll just see "Loaded slot *number*". Currently, only Slot 0 will save automatically (the rest are read-only unless you edit the ini file).
 	
 ### Changed
-	Window width/height are now autosaved and loaded on startup (and can be adjusted in settings).
+	Window width/height/position are now autosaved and loaded on startup (and can be adjusted in settings).
 	
 	Changed ContrastLens's Windows "description" (shown in Task Manager, etc) so that shortcuts created to it have its name, not a description.
 
