@@ -20,8 +20,16 @@ if (!is_undefined(intervalChangeTimer) && !timer_check(intervalChangeTimer)){
 	draw_text_shadow_4(360,45,string(interval) + "ms",c_lime);
 }
 
+
+if (!is_undefined(slotChangeTimer) && !timer_check(slotChangeTimer)){
+	var _slotNameDraw = is_undefined(presetSlotName) ? string(presetSlot) : presetSlotName;
+	draw_text_shadow_4(5,winH - 35,"Preset: " + _slotNameDraw,c_lime);
+}
+
+draw_set_halign(fa_right)
 if (!is_undefined(modeChangeTimer) && !timer_check(modeChangeTimer)){
 	var _modeStr = mode == LENS_MODE.capture ? "Capture" : "Live";
-	draw_text_shadow_4(5,winH - 35,_modeStr,c_lime);	
+	draw_text_shadow_4(winW - 5,winH - 35,_modeStr,c_lime);	
 }
+draw_set_halign(fa_left);
 surface_reset_target();

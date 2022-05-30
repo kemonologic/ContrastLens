@@ -122,6 +122,7 @@ mode = LENS_MODE.capture;
 cnt = 0;
 finderEnabled = false;
 presetSlot = 0;
+presetSlotName = undefined;
 
 shader = sh_bricon;
 shader_bUniform = shader_get_uniform(shader,"brightness");
@@ -131,6 +132,7 @@ briconChangeTimer = undefined;
 briconLastChanged = "Brightness";
 modeChangeTimer = undefined;
 intervalChangeTimer = undefined;
+slotChangeTimer = undefined;
 noticeFadeSpeed = 2;
 uiSurface = -1;
 
