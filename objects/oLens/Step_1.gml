@@ -27,6 +27,16 @@ if (keyboard_check_pressed(hotkeyMap[? "CLOSE"])){
 	game_end();
 }
 
+
+// slot switch
+if (is_in_range(keyboard_key,48,57,true)){
+	var _slotKeyNum = keyboard_key - 48;
+	hotkeySlot = _slotKeyNum;
+	keyboard_clear(keyboard_key);
+	// add timer check
+	// add apply settings
+}
+
 // brightness
 if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
 	var _brightnessDecreased = keyboard_check_pressed(hotkeyMap[? "BRIGHTNESS_DECREASE"]);
