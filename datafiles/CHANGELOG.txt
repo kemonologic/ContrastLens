@@ -13,3 +13,5 @@
 	Readme and changelog are now copied to %localappdata%\ContrastLens on start.
 	
 	Boot screen now specifies version number
+	
+	Miscellaneous UI tweaks

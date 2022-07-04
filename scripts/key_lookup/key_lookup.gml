@@ -143,6 +143,7 @@ if (string_length(key) == 1) {
 			return vk_subtract;
 		case "DECIMAL":
 			return vk_decimal;
+		case "NONE":
 		default:
 			return -1;
 	}

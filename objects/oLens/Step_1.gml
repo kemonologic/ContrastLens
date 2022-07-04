@@ -49,7 +49,7 @@ if (is_in_range(keyboard_key,48,57,true)){
 		
 		var _section = "slot" + string(presetSlot);
 		presetSlotName = file_ini_read_string(_settingsFile,_section,"NAME");
-		if (presetSlotName = ""){
+		if (presetSlotName == ""){
 			presetSlotName = undefined;
 		}
 		var _fileBrightness = file_ini_read_real(_settingsFile,_section,"BRIGHTNESS",options_brightness[NORMRANGE.vdefault]);
@@ -115,10 +115,14 @@ if (keyboard_check(hotkeyMap[? "CONTRAST_MODIFIER"])){
 var _intervalDecreased = keyboard_check_pressed(hotkeyMap[? "INTERVAL_DECREASE"]);
 var _intervalIncreased = keyboard_check_pressed(hotkeyMap[? "INTERVAL_INCREASE"]);
 var _intervalChange = ((_intervalDecreased * -1) + _intervalIncreased) * options_interval[NORMRANGE.vincrement];
+var _intervalReset = keyboard_check_pressed(hotkeyMap[? "INTERVAL_RESET"]);
 
 if (mode == LENS_MODE.live){
 	interval = clamp(interval + _intervalChange,options_interval[NORMRANGE.vmin],options_interval[NORMRANGE.vmax]);
-	if (_intervalChange != 0 || _slotChanged){
+	if (_intervalReset){
+		interval = options_interval[NORMRANGE.vdefault];
+	}
+	if (_intervalChange != 0 ||_intervalReset ||  _slotChanged){
 		if (intervalChangeTimer != undefined){
 			timer_restart(intervalChangeTimer);
 		}
