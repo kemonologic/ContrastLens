@@ -16,7 +16,8 @@ file_ini_close(settingsFile);
 
 
 ds_map_destroy(hotkeyMap);
-timer_destroy(briconChangeTimer);
+timer_destroy(briChangeTimer);
+timer_destroy(conChangeTimer);
 timer_destroy(modeChangeTimer);
 timer_destroy(intervalChangeTimer);
 timer_destroy(slotChangeTimer);

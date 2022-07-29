@@ -128,8 +128,12 @@ shader = sh_bricon;
 shader_bUniform = shader_get_uniform(shader,"brightness");
 shader_cUniform = shader_get_uniform(shader,"contrast");
 
-briconChangeTimer = undefined;
-briconLastChanged = "Brightness";
+briChangeTimer = undefined;
+briString = "Brightness";
+conChangeTimer = undefined;
+conString = "Contrast";
+
+
 modeChangeTimer = undefined;
 intervalChangeTimer = undefined;
 slotChangeTimer = undefined;

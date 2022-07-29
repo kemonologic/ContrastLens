@@ -76,13 +76,12 @@ if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
 	}
 	shader_set_uniform_f(shader_bUniform,brightness);
 	if ((_brightnessDecreased ^^ _brightnessIncreased) || _brightnessReset || _slotChanged){
-		if (briconChangeTimer != undefined){
-			timer_restart(briconChangeTimer);
+		if (briChangeTimer != undefined){
+			timer_restart(briChangeTimer);
 		}
 		else{
-			briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+			briChangeTimer = timer_create(noticeFadeSpeed,time.s);
 		}
-		briconLastChanged = "Brightness";
 	}
 }
 
@@ -100,13 +99,12 @@ if (keyboard_check(hotkeyMap[? "CONTRAST_MODIFIER"])){
 	}
 	shader_set_uniform_f(shader_cUniform,contrast);
 	if ((_contrastDecreased ^^ _contrastIncreased) || _contrastReset || _slotChanged){
-		if (briconChangeTimer != undefined){
-			timer_restart(briconChangeTimer);
+		if (conChangeTimer != undefined){
+			timer_restart(conChangeTimer);
 		}
 		else{
-			briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+			conChangeTimer = timer_create(noticeFadeSpeed,time.s);
 		}
-		briconLastChanged = "Contrast";	
 	}
 }
 
