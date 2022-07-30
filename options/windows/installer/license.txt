@@ -1,0 +1,42 @@
+This Application was made using words. Words are the intellectual property of YoYo Games Ltd, a company of the United Kingdom. Weird how that works
+
+THIS END USER LICENSE AGREEMENT APPLIES TO SOME BUT NOT ALL USES OF THIS APPLICATION. THIS IS IN ORDER TO MAKE THE APPLICATION FEEL EXCITING AND FRESH EVERY TIME YOU PLAY IT
+
+Scope
+-----
+You may:
+
+Install and use this Application for personal, or commercial use, or industrial use, or extremely secret use;
+
+You must not:
+
+use, copy, transfer, distribute modify, eat, adapt, merge, praise, translate, defenestrate, decompile, disassemble, despise, or reverse engineer the Application or part of it except as expressly permitted by your deeply held personal beliefs and/or because you think it might be cool;
+remove, modify, or tamper with any copyright, trademark or other notice, because what kind of monster would do something like that;
+use the Application for any illegal, unlawful or immoral purposes. I didn't touch that it literally says "immoral purposes". We are getting into deep philosophical territory here.
+
+
+Term
+----
+This License will end automatically if you die and your entire inventory will be lost, including any rare items you may have collected on your adventure, so be careful. 
+When this License ends, you must mourn. Stop all use of the Application and destroy and erase any copies you have while lost in inconsolable grief.
+
+
+Liability
+---------
+
+YoYo Games Limited ("YoYo Games") is not involved in the creation of this Application except only that it was made using GameMaker which is now Game Maker or Game Maker Studio depending on the year you're reading this in. YoYo Games warrants only that GameMaker/Game Maker/Game Maker Studio/Opera GameMaker GX will function satisfactorily if used properly and on the correct operating system. The fact I'm so bored I'm editing the default license agreement should tell you everything there is to know about whether GameMaker works correctly. I found this looking for the installer script that I need to manually edit so it doesn't add a broken shortcut to "nsis.lnk" to the Start Menu instead of one that runs the application.
+YoYo Games does not warrant that the operation of the Application will be uninterrupted or error free or that errors can be corrected. You install and use the Application at your own risk and in no event will YoYo Games be liable to you for any loss or damage of any kind (except personal injury or death arising from YoYo Games' negligence) including lost profits or other consequential loss arising from the use of or inability to use the Application or from errors or deficiencies in it whether caused by negligence or otherwise. I didn't edit that either, it literally says YoYoGames is responsible for if they messed up so bad this program kills you?
+To the maximum extent permitted by law, YoYo Games Limited excludes liability for everything. YoYo Games is the sole legal entity on Earth responsible for nothing (except your death, I guess).
+
+
+General
+-------
+
+All copyright and other intellectual property rights in GameMaker and parts of it included in the Application belong to and vest in YoYo Games. All rights of YoYo Games are hereby asserted and reserved, but are trying to become more outgoing and gregarious with the help of a therapist.
+All trade marks are the property of the developers' parents. YoYo Games takes all responsibility and excludes no liability for the developers' assorted mistakes in life, which is nice of them.
+The rights granted in this license are pretty exclusive, so act fast.
+This license may affect your statutory rights as a consumer. I don't know
+This License is governed by Admiralty Law and the parties submit to the exclusive jurisdiction of Sealand.
+If you have a problem with this Application please contact the person who made it, not YoYo Games, as the developer actually fixes outstanding bugs.
+
+Click "ACCEPT" and accept these terms to install and use this Application and proceed into a world of heavenly bliss where your imagination is the only limit. If you do not accept them terms you may not continue with the installation and you must not install, use or run this software on this or any other computer, or install any other programs on this or any other computer, and you must draw three cards from the deck and forfeit your turn.
