@@ -1,4 +1,4 @@
-## [0.2.0] - xxxxxxx
+## [0.2.0] - 7/29/22
 
 ### Added
 	Customizable hotkeys: After you've run ContrastLens for the first time, check %localappdata%\ContrastLens\cl_hotkeys.ini to view and change all the default hotkeys. You can use most common key names, e.g. "CTRL", "ALT", "A", "B", "BACKSPACE", etc. For keys like Shift that have left and right keys, either will work.
