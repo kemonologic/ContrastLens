@@ -2,8 +2,8 @@ if (justStarted){
 	draw_set_halign(fa_center);
 	draw_clear_alpha(c_black,1);
 	draw_text(winW / 2,50,"Welcome to ContrastLens!");
-	draw_text(winW / 2,105,"Capture an image (ENTER) \n or switch modes (M) \n to get started.");
-	draw_text(winW / 2,winH - 50,"deerbell.itch.io/contrastlens");
+	draw_text(winW / 2,105,"Capture an image (ENTER)\nor switch modes (M) \nto get started.");
+	draw_text(winW / 2,winH - 85,"v"+ string_delete(GM_version,5,2) + "\ndeerbell.itch.io/contrastlens");
 	draw_set_halign(fa_left);
 }
 

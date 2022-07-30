@@ -295,11 +295,27 @@
             }
         },
         {
+            "Key": "4d0cc772-a204-4793-abd6-9342c8cff419",
+            "Value": {
+                "id": "68e9cc72-efc4-4bbe-a17a-2ab4d7364be0",
+                "resourcePath": "scripts\\is_in_range\\is_in_range.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "51b96548-ac91-4d9b-bb57-93105ae90433",
             "Value": {
                 "id": "58dfb89c-fd30-43df-94d9-a4c0e2323dd7",
                 "resourcePath": "scripts\\EaseOutCirc\\EaseOutCirc.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "52ebd08e-fcd1-446c-be1e-ca826108f8c8",
+            "Value": {
+                "id": "dad16cca-729e-4b7f-80f6-5ec08e3d38c3",
+                "resourcePath": "extensions\\file_ini\\file_ini.yy",
+                "resourceType": "GMExtension"
             }
         },
         {
@@ -476,6 +492,14 @@
                 "id": "45696680-ce01-4115-8994-e3d66d48b7db",
                 "resourcePath": "shaders\\sh_bricon\\sh_bricon.yy",
                 "resourceType": "GMShader"
+            }
+        },
+        {
+            "Key": "7c9b27c5-1fb0-4c15-ad86-3d79a6a4b138",
+            "Value": {
+                "id": "afc05f44-5f68-4b35-8c90-a69c2bacf75e",
+                "resourcePath": "datafiles_yy\\cl_hotkeys_blank.ini.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -743,6 +767,14 @@
             }
         },
         {
+            "Key": "b43bc078-664f-416a-a367-c56d28178432",
+            "Value": {
+                "id": "3f4c9f2b-b571-4019-886a-2341d3b2c890",
+                "resourcePath": "datafiles_yy\\cl_settings_blank.ini.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "b60294e4-0f3b-4dd9-bcf2-4bd8348173a7",
             "Value": {
                 "id": "739fddd7-d5ab-4ab1-9be8-02a66e160207",
@@ -780,6 +812,14 @@
                 "id": "1bf231d9-bb00-4dda-b2f9-dbc651903981",
                 "resourcePath": "extensions\\window_command_hook\\window_command_hook.yy",
                 "resourceType": "GMExtension"
+            }
+        },
+        {
+            "Key": "b975c3ce-fb90-4427-b642-f9a2c64b1b2e",
+            "Value": {
+                "id": "ffd9e1ed-9e96-4894-a4e8-c370e3dfe682",
+                "resourcePath": "datafiles_yy\\README.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -972,6 +1012,14 @@
                 "id": "f6381791-096e-44bd-86c7-be66761b7d5c",
                 "resourcePath": "scripts\\timer_set_offset\\timer_set_offset.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e1f50f6a-3589-4d54-8ca6-78005207403f",
+            "Value": {
+                "id": "536c9a61-e573-49be-84e2-80fb48cff9a2",
+                "resourcePath": "datafiles_yy\\CHANGELOG.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1203,7 +1251,8 @@
         "32b2362b-2b7c-4833-a29b-6dbfc866768d",
         "9f5985b2-6cce-4450-a7fa-95596de11b8a",
         "c350ce31-1fb7-4154-b1f8-861f7f677178",
-        "c58ce004-3e6b-4cb4-bb9a-90835270a0ae"
+        "c58ce004-3e6b-4cb4-bb9a-90835270a0ae",
+        "4d0cc772-a204-4793-abd6-9342c8cff419"
     ],
     "tutorial": ""
 }

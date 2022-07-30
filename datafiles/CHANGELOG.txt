@@ -1,0 +1,25 @@
+## [0.2.0] - 7/29/22
+
+### Added
+	Customizable hotkeys: After you've run ContrastLens for the first time, check %localappdata%\ContrastLens\cl_hotkeys.ini to view and change all the default hotkeys. You can use most common key names, e.g. "CTRL", "ALT", "A", "B", "BACKSPACE", etc. For keys like Shift that have left and right keys, either will work.
+	
+	Always-on-top toggle (T): When enabled, you no longer have to keep ContrastLens focused to use the lens! While you can't interact with elements behind the lens via the mouse, you can position the lens over an application and then use that application's hotkeys to interact with it. For example, you could set ContrastLens to live mode and position it to scroll through an area on a webpage, seeing it through the lens. This preference is autosaved along with window width/height.
+
+	Preset slots: You can now load and save presets for contrast, brightness, and interval settings to multiple slots. After you've run ContrastLens for the first time, these are stored in %localappdata%\ContrastLens\cl_settings.ini. Slot0 is the "default" and will be automatically loaded on startup and saved on shutdown. Use keys 1-9 on the keyboard to load other slots. Slots can be named in the ini file for ease-of-use; if a slot doesn't have a name, you'll just see "Loaded slot *number*". Currently, only Slot 0 will save automatically (the rest are read-only unless you edit the ini file).
+	
+### Changed
+	Window width/height/position are now autosaved and loaded on startup (and can be adjusted in settings).
+	
+	Window X/Y now locked to primary display to prevent losing the window (improvements to this will come in the future)
+		
+	Contrast range has been increased
+	
+	Changed ContrastLens's Windows "description" (shown in Task Manager, etc) so that shortcuts created to it have its name, not a description.
+
+	Readme and changelog are now copied to %localappdata%\ContrastLens on start.
+	
+	Boot screen now specifies version number
+	
+	Version number now in all settings files
+	
+	Miscellaneous UI tweaks

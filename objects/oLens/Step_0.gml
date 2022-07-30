@@ -11,6 +11,7 @@ else if (mode == LENS_MODE.live){
 			window_set_size(winW,winH);
 		}
 	}
+	window_set_topmost(onTopEnabled);
 	buffer_set_surface(captureBuffer, captureSurface, 0, 0, 0);
 	cnt++;
 }

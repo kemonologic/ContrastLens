@@ -16,7 +16,7 @@ if (!surface_exists(uiSurface)){
 	surface_reset_target();
 }
 
-if (keyboard_check_pressed(captureKey) || mode == LENS_MODE.live){
+if (keyboard_check_pressed(hotkeyMap[? "CAPTURE"]) || mode == LENS_MODE.live){
 	justStarted = false;
 }
 
@@ -25,6 +25,42 @@ if (keyboard_check_pressed(captureKey) || mode == LENS_MODE.live){
 // Close 
 if (keyboard_check_pressed(hotkeyMap[? "CLOSE"])){
 	game_end();
+}
+
+var _slotChanged = false;
+// slot switch
+if (is_in_range(keyboard_key,48,57,true)){
+	var _slotKeyNum = keyboard_key - 48;
+	if (_slotKeyNum != presetSlot){
+		_slotChanged = true;
+	}
+	presetSlot = _slotKeyNum;
+	keyboard_clear(keyboard_key);
+	
+	if (_slotChanged){
+		if (slotChangeTimer != undefined){
+			timer_restart(slotChangeTimer);
+		}
+		else{
+			slotChangeTimer = timer_create(noticeFadeSpeed,time.s);
+		}
+		var _settingsFile = file_ini_open(SETTINGS_PATH);
+		
+		
+		var _section = "slot" + string(presetSlot);
+		presetSlotName = file_ini_read_string(_settingsFile,_section,"NAME");
+		if (presetSlotName == ""){
+			presetSlotName = undefined;
+		}
+		var _fileBrightness = file_ini_read_real(_settingsFile,_section,"BRIGHTNESS",options_brightness[NORMRANGE.vdefault]);
+		var _fileContrast = file_ini_read_real(_settingsFile,_section,"CONTRAST",options_contrast[NORMRANGE.vdefault]);
+		var _fileInterval  = file_ini_read_real(_settingsFile,_section,"INTERVAL",options_interval[NORMRANGE.vdefault]);
+		
+		brightness =  _fileBrightness != -1 ? _fileBrightness : options_brightness[NORMRANGE.vdefault];
+		contrast = _fileInterval != -1 ? _fileContrast : options_contrast[NORMRANGE.vdefault];
+		interval = _fileContrast != -1 ? _fileInterval : options_interval[NORMRANGE.vdefault];
+		file_ini_close(_settingsFile);
+	}
 }
 
 // brightness
@@ -39,14 +75,13 @@ if (keyboard_check(hotkeyMap[? "BRIGHTNESS_MODIFIER"])){
 		brightness = options_brightness[NORMRANGE.vdefault];
 	}
 	shader_set_uniform_f(shader_bUniform,brightness);
-	if ((_brightnessDecreased ^^ _brightnessIncreased) || _brightnessReset){
-		if (briconChangeTimer != undefined){
-			timer_restart(briconChangeTimer);
+	if ((_brightnessDecreased ^^ _brightnessIncreased) || _brightnessReset || _slotChanged){
+		if (briChangeTimer != undefined){
+			timer_restart(briChangeTimer);
 		}
 		else{
-			briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+			briChangeTimer = timer_create(noticeFadeSpeed,time.s);
 		}
-		briconLastChanged = "Brightness";
 	}
 }
 
@@ -63,14 +98,13 @@ if (keyboard_check(hotkeyMap[? "CONTRAST_MODIFIER"])){
 		contrast = options_contrast[NORMRANGE.vdefault];
 	}
 	shader_set_uniform_f(shader_cUniform,contrast);
-	if ((_contrastDecreased ^^ _contrastIncreased) || _contrastReset){
-		if (briconChangeTimer != undefined){
-			timer_restart(briconChangeTimer);
+	if ((_contrastDecreased ^^ _contrastIncreased) || _contrastReset || _slotChanged){
+		if (conChangeTimer != undefined){
+			timer_restart(conChangeTimer);
 		}
 		else{
-			briconChangeTimer = timer_create(noticeFadeSpeed,time.s);
+			conChangeTimer = timer_create(noticeFadeSpeed,time.s);
 		}
-		briconLastChanged = "Contrast";	
 	}
 }
 
@@ -79,10 +113,14 @@ if (keyboard_check(hotkeyMap[? "CONTRAST_MODIFIER"])){
 var _intervalDecreased = keyboard_check_pressed(hotkeyMap[? "INTERVAL_DECREASE"]);
 var _intervalIncreased = keyboard_check_pressed(hotkeyMap[? "INTERVAL_INCREASE"]);
 var _intervalChange = ((_intervalDecreased * -1) + _intervalIncreased) * options_interval[NORMRANGE.vincrement];
+var _intervalReset = keyboard_check_pressed(hotkeyMap[? "INTERVAL_RESET"]);
 
 if (mode == LENS_MODE.live){
 	interval = clamp(interval + _intervalChange,options_interval[NORMRANGE.vmin],options_interval[NORMRANGE.vmax]);
-	if (_intervalChange != 0){
+	if (_intervalReset){
+		interval = options_interval[NORMRANGE.vdefault];
+	}
+	if (_intervalChange != 0 ||_intervalReset ||  _slotChanged){
 		if (intervalChangeTimer != undefined){
 			timer_restart(intervalChangeTimer);
 		}
@@ -92,12 +130,22 @@ if (mode == LENS_MODE.live){
 	}
 }
 
-
-
 // finder
 if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_FINDER"])){
 	finderEnabled = !finderEnabled;
 }
+
+// shader
+if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_INVERT"])){
+	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
+}
+
+// always-on-top
+if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_ONTOP"])){	
+	onTopEnabled = !onTopEnabled;
+	window_set_topmost(onTopEnabled);
+}
+
 
 // mode
 if (keyboard_check_pressed(hotkeyMap[? "CHANGE_MODE"])){
@@ -110,10 +158,6 @@ if (keyboard_check_pressed(hotkeyMap[? "CHANGE_MODE"])){
 	}
 }
 
-// shader
-if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_SHADER"])){
-	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
-}
 
 // window movement
 var _u = -1 * keyboard_check(hotkeyMap[? "MOVE_UP"]);
@@ -125,8 +169,8 @@ if (keyboard_check(hotkeyMap[? "RESIZE_MODIFIER"])){
 	var _resizeW = (_l + _r) * winResizeWIncrement;
 	var _resizeH = ((_u + _d) * -1) * winResizeHIncrement; // flip to make up bigger
 	if (_resizeW != 0 || _resizeH != 0){
-		var _newW = window_get_width() + _resizeW;
-		var _newH = window_get_height() + _resizeH;
+		var _newW = max(room_width,window_get_width() + _resizeW);
+		var _newH = max(room_height,window_get_height() + _resizeH);
 		
 		window_set_size(_newW,_newH);
 		surface_resize(captureSurface,winW,winH);
@@ -138,7 +182,8 @@ if (keyboard_check(hotkeyMap[? "RESIZE_MODIFIER"])){
 else{
 	var _changeX = (_l + _r) * winMoveIncrement;
 	var _changeY = (_u + _d) * winMoveIncrement;
-	window_set_position(winX + _changeX,winY +  _changeY);
+	window_set_position(clamp(winX + _changeX,0,display_get_width()),
+					    clamp(winY +  _changeY,0,display_get_height()));
 }
 
 if (window_get_width() != 1){
