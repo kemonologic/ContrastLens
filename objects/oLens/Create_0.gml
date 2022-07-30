@@ -27,6 +27,30 @@ winResizeWIncrement = 10;
 winResizeHIncrement = 10;
 winMoveIncrement = 5;
 
+mode = LENS_MODE.capture;
+
+cnt = 0;
+finderEnabled = false;
+onTopEnabled = false;
+presetSlot = 0;
+presetSlotName = undefined;
+
+shader = sh_bricon;
+shader_bUniform = shader_get_uniform(shader,"brightness");
+shader_cUniform = shader_get_uniform(shader,"contrast");
+
+briChangeTimer = undefined;
+briString = "Brightness";
+conChangeTimer = undefined;
+conString = "Contrast";
+
+modeChangeTimer = undefined;
+intervalChangeTimer = undefined;
+slotChangeTimer = undefined;
+noticeFadeSpeed = 2;
+uiSurface = -1;
+
+
 // FILE HANDLING
 if (!file_exists(SETTINGS_PATH)){
 	file_copy("cl_settings_blank.ini",SETTINGS_PATH);
@@ -64,8 +88,8 @@ options_brightness[NORMRANGE.vmax] = 0.5;
 options_brightness[NORMRANGE.vdefault] = 0.0;
 options_brightness[NORMRANGE.vincrement] = 0.025;
 
-options_contrast[NORMRANGE.vmin] = 0.5;
-options_contrast[NORMRANGE.vmax] = 1.5;
+options_contrast[NORMRANGE.vmin] = 0.3;
+options_contrast[NORMRANGE.vmax] = 1.7;
 options_contrast[NORMRANGE.vdefault] = 1.0; 
 options_contrast[NORMRANGE.vincrement] = 0.1;
 
@@ -91,15 +115,18 @@ var _fileWinW = file_ini_read_int(settingsFile,"window","WIDTH",winW);
 var _fileWinH = file_ini_read_int(settingsFile,"window","HEIGHT",winH);
 var _fileWinX = file_ini_read_int(settingsFile,"window","X",-1);
 var _fileWinY = file_ini_read_int(settingsFile,"window","Y",-1);
+var _fileWinOnTop = file_ini_read_int(settingsFile,"window","ONTOP",false);
 if (_fileWinW >= room_width && _fileWinH >= room_height){
 	winW = _fileWinW;
 	winH = _fileWinH;
+	onTopEnabled = _fileWinOnTop;
 	if (_fileWinX != -1 && _fileWinY != -1){
 		winX = _fileWinX;
 		winY = _fileWinY;
 		window_set_position(winX,winY);
 	}
 	window_set_size(winW,winH);
+	window_set_topmost(onTopEnabled);
 }
 
 file_ini_close(settingsFile);
@@ -117,28 +144,6 @@ window_command_hook(window_command_restore);
 //window_set_taskbar_button_visible(false);
 //window_set_background_redraw()
 game_set_speed(60,gamespeed_fps);
-mode = LENS_MODE.capture;
-
-cnt = 0;
-finderEnabled = false;
-presetSlot = 0;
-presetSlotName = undefined;
-
-shader = sh_bricon;
-shader_bUniform = shader_get_uniform(shader,"brightness");
-shader_cUniform = shader_get_uniform(shader,"contrast");
-
-briChangeTimer = undefined;
-briString = "Brightness";
-conChangeTimer = undefined;
-conString = "Contrast";
-
-
-modeChangeTimer = undefined;
-intervalChangeTimer = undefined;
-slotChangeTimer = undefined;
-noticeFadeSpeed = 2;
-uiSurface = -1;
 
 
 

@@ -11,6 +11,7 @@ file_ini_write_int(settingsFile,"window","WIDTH",winW);
 file_ini_write_int(settingsFile,"window","HEIGHT",winH);
 file_ini_write_int(settingsFile,"window","X",winX);
 file_ini_write_int(settingsFile,"window","Y",winY);
+file_ini_write_int(settingsFile,"window","ONTOP",onTopEnabled);
 
 file_ini_close(settingsFile);
 

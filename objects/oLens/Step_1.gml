@@ -135,6 +135,18 @@ if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_FINDER"])){
 	finderEnabled = !finderEnabled;
 }
 
+// shader
+if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_INVERT"])){
+	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
+}
+
+// always-on-top
+if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_ONTOP"])){	
+	onTopEnabled = !onTopEnabled;
+	window_set_topmost(onTopEnabled);
+}
+
+
 // mode
 if (keyboard_check_pressed(hotkeyMap[? "CHANGE_MODE"])){
 	mode = (mode + 1) % LENS_MODE.__SIZE;
@@ -146,10 +158,6 @@ if (keyboard_check_pressed(hotkeyMap[? "CHANGE_MODE"])){
 	}
 }
 
-// shader
-if (keyboard_check_pressed(hotkeyMap[? "TOGGLE_INVERT"])){
-	shader = (shader == sh_invert) ? sh_bricon : sh_invert;
-}
 
 // window movement
 var _u = -1 * keyboard_check(hotkeyMap[? "MOVE_UP"]);
@@ -174,7 +182,8 @@ if (keyboard_check(hotkeyMap[? "RESIZE_MODIFIER"])){
 else{
 	var _changeX = (_l + _r) * winMoveIncrement;
 	var _changeY = (_u + _d) * winMoveIncrement;
-	window_set_position(winX + _changeX,winY +  _changeY);
+	window_set_position(clamp(winX + _changeX,0,display_get_width()),
+					    clamp(winY +  _changeY,0,display_get_height()));
 }
 
 if (window_get_width() != 1){
