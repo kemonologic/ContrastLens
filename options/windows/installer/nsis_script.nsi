@@ -249,8 +249,9 @@ Section UnInstall
          ;end uninstall, after uninstall from all logged paths has been performed
          !insertmacro UNINSTALL.LOG_END_UNINSTALL
 
-        Delete "$SMPROGRAMS\${APP_NAME}\nsis.lnk"
+        Delete "$SMPROGRAMS\${APP_NAME}\ContrastLens.lnk"
         Delete "$SMPROGRAMS\${APP_NAME}\uninstall.lnk"
+        Delete "$SMPROGRAMS\${APP_NAME}\${APP_NAME} License.lnk"
         RmDir "$SMPROGRAMS\${APP_NAME}"
 
         DeleteRegKey /ifempty ${INSTDIR_REG_ROOT} "${INSTDIR_REG_KEY}"
